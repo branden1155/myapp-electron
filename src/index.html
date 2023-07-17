@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Brandens Electron Application</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1 class="title-app">Branden Murphys Electron Assigment</h1>
+    <p>Click the <span class="purple-tag">Purple</span> button below to show a notification...</p>
+    <p>Click the <span class="green-tag">Green</span> button to open a new window...</p>
+    <button class="btn-notification" onclick="showNotification()">Show Notification</button>
+    <button class="btn-newWindow"onclick="openNewWindow()">Open New Window</button>
+
+    <script>
+      // Function to send a message to the main process to trigger the notification
+      function showNotification() {
+        window.electron.notification('Brandens Electron Project','This is a notification from Electron!');
+      }
+       // Function to open a new window
+       function openNewWindow() {
+        window.electron.createNewWindow();
+      }
+    </script>
+  </body>
+</html>
